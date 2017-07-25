@@ -10,7 +10,9 @@ def generate_array(array_fname):
 	file = tables.open_file(array_fname, mode='w')
 	array = file.create_earray(file.root, 'data', tables.FloatAtom(itemsize=4), (0,))
 	for i in xrange(WRITE_CHUNKS): 
-		array.append(np.random.rand(ELEMENT_COUNT/WRITE_CHUNKS))
+		new_array = np.random.rand(ELEMENT_COUNT/WRITE_CHUNKS)
+		array.append(new_array)
+		del new_array
 	file.close() 
 
 
