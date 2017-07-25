@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import numpy as np
 
 import boto3
@@ -28,5 +27,3 @@ def main():
 
 if __name__ == "__main__": 
 	main() 
-=======
->>>>>>> db5e3d5fae4834f6806f3fa8960e26458fae6464
