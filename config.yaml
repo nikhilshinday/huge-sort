@@ -1,0 +1,5 @@
+inputArrayName: array.h5
+outputArrayName: sorted_array.h5
+bucketName: huge-sort
+pageSize: 1000000
+

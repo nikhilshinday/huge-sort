@@ -1,9 +1,11 @@
-import numpy as np
-
 import boto3
+import numpy as np
 import tables 
+import yaml
 
-ELEMENT_COUNT = 20000000000
+from utils import * 
+
+ELEMENT_COUNT = 20000
 WRITE_CHUNKS = 10
 
 def generate_array(array_fname): 
@@ -21,9 +23,10 @@ def upload_array(array_fname):
 	bucket.upload_file(array_fname, array_fname)
 
 def main(): 
-	fname = 'array.h5'
+	config = get_config()
+	fname = config['inputArrayName']
 	generate_array(fname)
-	upload_array(fname)	
+	# upload_array(fname)	
 
 if __name__ == "__main__": 
 	main() 
